@@ -1,0 +1,39 @@
+Membuat Database untuk ASA
+
+
+=> Mahasiswa
+CREATE TABLE mahasiswa(
+    nim VARCHAR(20) NOT NULL PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL
+);
+
+
+=> Admin
+CREATE TABLE admin(
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    admin VARCHAR(50) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+
+=> Buku
+CREATE TABLE buku(
+    code_buku CHAR(5) NOT NULL PRIMARY KEY,
+    judul_buku VARCHAR(100) NOT NULL,
+    nama_pengarang VARCHAR(50) NOT NULL,
+    penerbit VARCHAR(50) NOT NULL,
+    tahun_terbit YEAR NOT NULL
+);
+
+
+=> Transaksi
+CREATE TABLE transaksi_peminjaman(
+    id_transaksi INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nim VARCHAR(20) NOT NULL,
+    code_buku CHAR(5) NOT NULL,
+    tanggal_pinjam DATE NOT NULL,
+    tanggal_kembali DATE,
+    status ENUM('dipinjam', 'dikembalikan') NOT NULL,
+    FOREIGN KEY (nim) REFERENCES mahasiswa(nim),
+    FOREIGN KEY (code_buku) REFERENCES buku(code_buku)
+);
