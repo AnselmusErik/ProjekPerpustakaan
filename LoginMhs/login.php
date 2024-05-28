@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
         $mahasiswa = mysqli_fetch_assoc($resultMahasiswa);
         if ($password == $mahasiswa['nim']) {
             // Jika password benar, arahkan ke halaman home mahasiswa
-            header('Location: home_mahasiswa.php');
+            header('Location: ../HomeMhs/home.php');
         } else {
             $error = "Username atau password salah";
         }
@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
         $admin = mysqli_fetch_assoc($resultAdmin);
         if ($password == $admin['password']) {
             // Jika password benar, arahkan ke halaman home admin
-            header('Location: home_admin.php');
+            header('Location: ../HomeMhs/home.php');
         } else {
             $error = "Username atau password salah";
         }
