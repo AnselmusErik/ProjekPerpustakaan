@@ -24,7 +24,6 @@ CREATE TABLE buku(
     penerbit VARCHAR(50) NOT NULL,
     tahun_terbit YEAR NOT NULL
     ALTER TABLE buku ADD gambar LONGBLOB NOT NULL;
-
 );
 
 
