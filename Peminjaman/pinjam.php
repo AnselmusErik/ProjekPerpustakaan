@@ -42,7 +42,7 @@ $gambarBase64 = base64_encode($buku['gambar']);
         <img src="data:image/png;base64,<?php echo $gambarBase64; ?>" alt="Gambar Buku">
         <p><?php echo $buku['judul_buku']; ?></p>
 
-        <label for="tanggal_kembali">Tanggal Kembali:</label>
+        <label for="tanggal_kembali">Tanggal Pengembalian:</label>
         <input type="date" name="tanggal_kembali" id="tanggal_kembali" required>
 
         <input type="hidden" name="code_buku" value="<?php echo $code_buku; ?>">
