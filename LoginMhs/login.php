@@ -21,7 +21,10 @@ if (isset($_POST['submit'])) {
         // Jika pengguna adalah mahasiswa
         $mahasiswa = mysqli_fetch_assoc($resultMahasiswa);
         if ($password == $mahasiswa['nim']) {
-            // Jika password benar, arahkan ke halaman home mahasiswa
+            // Jika password benar, simpan nim ke dalam sesi
+            $_SESSION['nim'] = $mahasiswa['nim'];
+    
+            // Arahkan ke halaman home mahasiswa
             header('Location: ../HomeMhs/home.php');
         } else {
             $error = "Username atau password salah";

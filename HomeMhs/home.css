@@ -1,0 +1,30 @@
+.card {
+    height: 100%;
+    position: relative;
+    transition: transform .2s; 
+}
+
+.card:hover {
+    transform: scale(1.02); 
+}
+
+.btn-pinjam {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: background-color .3s;
+}
+
+.btn-pinjam:hover {
+    background-color: #007bff;
+}
+
+.card-img-top {
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.card-body {
+    padding-bottom: 40px;
+}

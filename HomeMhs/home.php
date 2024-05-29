@@ -5,31 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        .card {
-            height: 100%;
-            position: relative;
-        }
-
-        .btn-pinjam {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
-        .card-img-top {
-            height: auto;
-            max-height: 200px;
-            object-fit: contain;
-        }
-        .card-body {
-            padding-bottom: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="home.css">
     <title>Library</title>
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
@@ -65,7 +45,8 @@
                             <p>Pengarang: ' . $row['nama_pengarang'] . '</p>
                             <p>Penerbit: ' . $row['penerbit'] . '</p>
                             <p>Tahun Terbit: ' . $row['tahun_terbit'] . '</p>
-                            <a href="#" class="btn btn-primary">Pinjam</a>
+                            <a href="../Peminjaman/pinjam.php?code_buku=' . $row['code_buku'] . '" class="btn btn-primary btn-pinjam">Pinjam</a>
+
                         </div>
                     </div>
                 </div>';
