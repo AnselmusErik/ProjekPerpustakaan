@@ -5,6 +5,8 @@ session_start();
 // Sambungkan ke database Anda di sini
 $db = mysqli_connect("localhost", "root", "", "librarydb");
 
+$success = false;
+
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -21,7 +23,7 @@ if (isset($_POST['submit'])) {
             // Masukkan data pengguna baru ke dalam tabel mahasiswa
             $query = "INSERT INTO mahasiswa (nama, nim) VALUES ('$username', '$password')";
             mysqli_query($db, $query);
-            header('Location: ../Login/login.php');
+            $success = true;
         }
     } else {
         $error = "Password dan konfirmasi password tidak sama";
@@ -56,9 +58,16 @@ if (isset($_POST['submit'])) {
         <input type="password" name="confirm_password" id="confirm_password">
         <button type="submit" name="submit">Register</button>
 
-        <a href="../Login/login.php" style="display: block; margin-top: 20px; margin-left: 150px;">
+        <a href="../LoginMhs/login.php" style="display: block; margin-top: 20px; margin-left: 150px;">
             <i class="fas fa-arrow-left"></i></a>
     </form>
+
+    <?php if ($success) : ?>
+        <script>
+            alert("Akun berhasil dibuat! Anda akan diarahkan ke halaman login.");
+            window.location.href = "../LoginMhs/login.php";
+        </script>
+    <?php endif; ?>
 </body>
 <script src="regis.js"></script>
 

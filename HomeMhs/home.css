@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
 .card {
     height: 100%;
     position: relative;
-    transition: transform .2s; 
+    transition: transform .2s;
 }
 
 .card:hover {
-    transform: scale(1.02); 
+    transform: scale(1.02);
 }
 
 .btn-pinjam {
@@ -13,10 +24,11 @@
     bottom: 0;
     left: 0;
     transition: background-color .3s;
+    width: 100%;
 }
 
 .btn-pinjam:hover {
-    background-color: #007bff;
+    background-color: #0056b3;
 }
 
 .card-img-top {
@@ -27,4 +39,17 @@
 
 .card-body {
     padding-bottom: 40px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+
+.pagination .page-item .page-link {
+    color: #007bff !important;
 }

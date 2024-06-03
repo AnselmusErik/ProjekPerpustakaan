@@ -44,7 +44,6 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,13 +70,10 @@ if (isset($_POST['submit'])) {
 
         <!-- Link ke halaman reset password dan register -->
         <div class="link-container">
-            <a href="../Reset/reset.php">Forgot Password?</a>
-            <!-- <span></span> -->
             <a href="../Register/regis.php">Create Account</a>
         </div>
 
     </form>
 </body>
 <script src="login.js"></script>
-
 </html>
